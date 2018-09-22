@@ -1,7 +1,6 @@
-#include <iostream>
 #include <cstdio>
 using namespace std;
-int p[200000],x[200000],y[200000],fa[200000],num[200000],n,m;
+int p[200000],fa[200000],num[200000],n,m,x,y;
 int root(int x)//并查集 路径压缩
 {
     if (fa[x]==0) return x;
@@ -20,10 +19,10 @@ int main() {
     for (int i=1;i<=n;++i){num[i]=1;}
     for (int i=0;i<m;++i)
     {
-        scanf("%d%d",&x[i],&y[i]);
-        unionset(x[i],y[i]);
-        p[x[i]]++;
-        p[y[i]]++;
+        scanf("%d%d",&x,&y);
+        unionset(x,y);
+        p[x]++;
+        p[y]++;
     }
     for (int i=1;i<=n;++i)
     {
